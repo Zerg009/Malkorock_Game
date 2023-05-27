@@ -16,7 +16,7 @@ TagManager:
   - UI
   - Player
   - Lights
-  - 
+  - Text
   - 
   - 
   - 
@@ -47,12 +47,15 @@ TagManager:
   - name: Background
     uniqueID: 3387772415
     locked: 0
+  - name: Text
+    uniqueID: 502311517
+    locked: 0
+  - name: Light
+    uniqueID: 1210661761
+    locked: 0
   - name: Player
     uniqueID: 2929734089
     locked: 0
   - name: Foreground
     uniqueID: 3022733159
-    locked: 0
-  - name: Light
-    uniqueID: 1210661761
     locked: 0
