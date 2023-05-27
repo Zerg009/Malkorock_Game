@@ -24,7 +24,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+       
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 
         if (Input.GetKey(KeyCode.W) && isGrounded)
@@ -56,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
         anim.SetTrigger("Jump");
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D (Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
             isGrounded = true;
