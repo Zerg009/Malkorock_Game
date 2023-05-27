@@ -11,11 +11,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Foreground
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Lights
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3022733159
+    locked: 0
+  - name: Light
+    uniqueID: 1210661761
     locked: 0
