@@ -10,30 +10,49 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private bool isGrounded;
+    public bool isBlocked;
+
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
     // Update is called once per frame
     void Update()
     {
+        if (isBlocked)
+            return;
         
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-       
-        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
+        // check for jump
         if (Input.GetKey(KeyCode.W) && isGrounded)
         {
             Jump();
         }
 
+        // check for attack
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Attack();
+        }
+
+        Run();
+
+        // Set animator parameters
+        //if (horizontalInput > 0.01 || horizontalInput < -0.01f)
+        //    anim.SetBool("isRunning", true);
+        //else
+        //    anim.SetBool("isRunning", false);
+       
+        anim.SetBool("isGrounded", isGrounded);
+    }
+    private void Run()
+    { 
+
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        body.velocity = new Vector2(horizontalInput* speed, body.velocity.y);
         // Flip player when moving left/right
         if (horizontalInput > 0.01f)
         {
@@ -43,14 +62,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1) * 6;
         }
-
-        // Set animator parameters
-        //if (horizontalInput > 0.01 || horizontalInput < -0.01f)
-        //    anim.SetBool("isRunning", true);
-        //else
-        //    anim.SetBool("isRunning", false);
         anim.SetBool("isRunning", horizontalInput != 0);
-        anim.SetBool("isGrounded", isGrounded);
     }
     private void Jump()
     {
@@ -58,9 +70,14 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
         anim.SetTrigger("Jump");
     }
-    private void OnCollisionEnter2D (Collision2D collision)
+    private void Attack()
+    {
+        anim.SetTrigger("Attack");
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
             isGrounded = true;
-    }   
+    }
 }

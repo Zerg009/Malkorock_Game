@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0.21960784}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11651,7 +11651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e544f58479a905a46a18e93ba706ef7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typingSpeed: 0.1
+  typingSpeed: 0.025
 --- !u!1 &1529024467
 GameObject:
   m_ObjectHideFlags: 0
@@ -12251,6 +12251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpHeight: 20
+  isBlocked: 0
 --- !u!95 &1797318377
 Animator:
   serializedVersion: 5
@@ -14093,6 +14094,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1423375228308600189, guid: adc3c129888eb0641b72a15b9c7378f9, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1797318376}
     - target: {fileID: 1423375228308600189, guid: adc3c129888eb0641b72a15b9c7378f9, type: 3}
       propertyPath: confirmationWindow
       value: 

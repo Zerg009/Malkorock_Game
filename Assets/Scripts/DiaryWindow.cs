@@ -6,14 +6,19 @@ using UnityEngine;
 public class DiaryWindow : MonoBehaviour
 {
     public GameObject confirmationWindow;
+    public PlayerMovement playerMovement;
+    
     private void Awake()
     {
         confirmationWindow.SetActive(false);
+
     }
     private void Update()
     {
         if(Input.GetKey(KeyCode.Escape))
         {
+            Destroy(gameObject);
+            playerMovement.isBlocked = false;
             confirmationWindow.SetActive(false);
         }
     }
@@ -23,6 +28,7 @@ public class DiaryWindow : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             confirmationWindow.SetActive(true);
+            playerMovement.isBlocked = true;
         }
     }
 }

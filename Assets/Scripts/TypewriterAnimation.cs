@@ -24,9 +24,11 @@ public class TypewriterAnimation : MonoBehaviour
 
     private void Start()
     {
+    }
+    private void OnEnable()
+    {
         StartCoroutine(TypeText());
     }
-
     private IEnumerator TypeText()
     {
         for (int i = 0; i <= fullText.Length; i++)
