@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4052168044149313891}
   - component: {fileID: 4052168044149313888}
   - component: {fileID: 4052168044149313893}
+  - component: {fileID: 487212213}
+  - component: {fileID: 487212214}
   m_Layer: 9
   m_Name: Orc
   m_TagString: Enemies
@@ -27,10 +29,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4052168044149313918}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.33, y: -2.35, z: 0}
-  m_LocalScale: {x: 6.39, y: 6.39, z: 6.39}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: -6.39, y: 6.39, z: 6.39}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -155,3 +157,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &487212213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4052168044149313918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f327fb0de0674d49bc420fb99527aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1
+  damage: 2
+  boxCollider: {fileID: 4052168044149313888}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  range: 0.84
+  colliderDistance: 0.23
+--- !u!114 &487212214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4052168044149313918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a28218e86e541141ad3c536ea8d156d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 0
