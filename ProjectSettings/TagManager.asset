@@ -9,6 +9,7 @@ TagManager:
   - Foreground
   - Objects
   - Enemies
+  - Traps
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Lights
   - Text
   - Enemies
-  - 
+  - Traps
   - 
   - 
   - 
@@ -60,6 +61,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2929734089
+    locked: 0
+  - name: Traps
+    uniqueID: 4269884199
     locked: 0
   - name: Foreground
     uniqueID: 3022733159

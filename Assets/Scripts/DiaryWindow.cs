@@ -24,11 +24,12 @@ public class DiaryWindow : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Debug bblea");
+        
         if (collision.gameObject.CompareTag("Player"))
         {
             confirmationWindow.SetActive(true);
             playerMovement.isBlocked = true;
+
         }
     }
 }
