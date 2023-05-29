@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         if (isBlocked)
         {
             anim.SetBool("isRunning", false);
+            return;
         }
         
         // check for jump
