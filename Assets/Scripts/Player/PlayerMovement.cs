@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Player Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpHeight;
+    
     private Rigidbody2D body;
     private Animator anim;
     private bool isGrounded;
@@ -21,6 +22,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Collider Parameters")]
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private float colliderDistance;
+
+    [Header("Ground Check")]
+    [SerializeField] public LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckRadius;
+    private bool isTouchingGround;
+
+
 
     [Header("Player Layer")]
     [SerializeField] private LayerMask enemyLayer;
@@ -45,11 +54,15 @@ public class PlayerMovement : MonoBehaviour
         if (isBlocked)
         {
             anim.SetBool("isRunning", false);
+            body.velocity = Vector3.zero;
             return;
         }
-        
+
+        isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius , groundLayer );
+
+        Debug.Log(isTouchingGround);
         // check for jump
-        if (Input.GetKey(KeyCode.W) && isGrounded)
+        if (Input.GetKey(KeyCode.W) && isTouchingGround)
         {
             Jump();
         }
@@ -62,13 +75,8 @@ public class PlayerMovement : MonoBehaviour
 
         Run();
 
-        // Set animator parameters
-        //if (horizontalInput > 0.01 || horizontalInput < -0.01f)
-        //    anim.SetBool("isRunning", true);
-        //else
-        //    anim.SetBool("isRunning", false);
        
-        anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isGrounded", isTouchingGround);
     }
     private void Attack()
     {
@@ -83,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
         //}
         
     }
+
     private bool EnemyInSight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(
@@ -105,8 +114,12 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance, new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y * range,
+        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance, 
+            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y * range,
             boxCollider.bounds.size.z * range));
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius );
     }
     private void DamageEnemy()
     {
