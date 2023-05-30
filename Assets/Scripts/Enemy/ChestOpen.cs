@@ -10,10 +10,12 @@ public class ChestOpen : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject showDialog;
     private Animator anim;
-    private bool canOpen = true;
+    private static bool canOpen = true;
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        
+
     }
     private void Update()
     {
@@ -36,9 +38,10 @@ public class ChestOpen : MonoBehaviour
                 // do something
                 Debug.Log("Opened chest");
                 anim.SetTrigger("Open");
-
+                player.gameObject.GetComponent<Fireballs>().canShoot = true;
                 showDialog.SetActive(true);
-                
+                PlayerPrefs.SetInt("canShoot", 1);
+                PlayerPrefs.Save();
             }
         }
     }

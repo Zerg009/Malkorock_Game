@@ -15,7 +15,18 @@ public class ClickButton : MonoBehaviour
     {
         btnImage = GetComponent<Image>();
     }
-    public void changeImage()
+    public void OnlyChangeImage()
+    {
+        if (btnImage.sprite == btnSpriteDefault)
+        {
+            btnImage.sprite = btnSpritePressed;
+        }
+        else
+        {
+            btnImage.sprite = btnSpriteDefault;
+        }
+    }
+        public void changeImage()
     {
         if(btnImage.sprite == btnSpriteDefault)
         {

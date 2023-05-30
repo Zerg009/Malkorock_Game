@@ -8,9 +8,18 @@ public class Fireballs : MonoBehaviour
     public GameObject fireball;
     [SerializeField] private float cooldown;
     private float timer;
+    public bool canShoot;
     // Update is called once per frame
+    private void Awake()
+    {
+        canShoot = PlayerPrefs.GetInt("canShoot", 0) == 1 ? true : false;  
+    }
     void Update()
     {
+        if(!canShoot)
+        {
+            return;
+        }
         timer += Time.deltaTime;
         if(Input.GetMouseButtonDown(1))
         {
