@@ -15,7 +15,7 @@ public class DiaryWindow : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
+        if(Input.GetKey(KeyCode.Escape) && confirmationWindow.gameObject.activeSelf)
         {
             Destroy(gameObject);
             playerMovement.isBlocked = false;

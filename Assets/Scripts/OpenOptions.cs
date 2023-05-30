@@ -33,8 +33,5 @@ public class OpenOptions : MonoBehaviour
             }
         }
     }
-    public void Resume()
-    {
-        gameObject.SetActive(false);
-    }
+   
 }

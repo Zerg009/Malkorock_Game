@@ -27,23 +27,23 @@ public class ClickButton : MonoBehaviour
         }
     }
         public void changeImage()
-    {
-        if(btnImage.sprite == btnSpriteDefault)
         {
-            btnImage.sprite = btnSpritePressed;
-        }
-        else
-        {
-            btnImage.sprite = btnSpriteDefault;
-        }
+            if(btnImage.sprite == btnSpriteDefault)
+            {
+                btnImage.sprite = btnSpritePressed;
+            }
+            else
+            {
+                btnImage.sprite = btnSpriteDefault;
+            }
 
-        //if(showDialog != null) { 
+            //if(showDialog != null) { 
         
-        //    showDialog.SetActive(false);
-        //}
+            //    showDialog.SetActive(false);
+            //}
 
-        this.transform.parent.transform.parent.gameObject.SetActive(false);
+            this.transform.parent.transform.parent.gameObject.SetActive(false);
 
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
-    }
+            SceneManager.LoadScene(2, LoadSceneMode.Single);
+        }
 }

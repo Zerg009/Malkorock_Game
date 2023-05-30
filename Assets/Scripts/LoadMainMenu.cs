@@ -18,6 +18,7 @@ public class LoadMainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
         isLoaded = true;
     }
+
     public void CloseMainMenuDialog()
     {
         isLoaded = false;

@@ -11,6 +11,7 @@ TagManager:
   - Enemies
   - Traps
   - Projectile
+  - Triggers
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Enemies
   - Traps
   - Objects
-  - 
+  - Triggers
   - 
   - 
   - 
@@ -77,4 +78,7 @@ TagManager:
     locked: 0
   - name: Projectilles
     uniqueID: 1174911515
+    locked: 0
+  - name: Triggers
+    uniqueID: 3142478519
     locked: 0
