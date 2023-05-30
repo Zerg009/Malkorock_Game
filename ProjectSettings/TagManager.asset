@@ -10,6 +10,7 @@ TagManager:
   - Objects
   - Enemies
   - Traps
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -47,9 +48,6 @@ TagManager:
   - name: Background
     uniqueID: 3387772415
     locked: 0
-  - name: Text
-    uniqueID: 502311517
-    locked: 0
   - name: Light
     uniqueID: 1210661761
     locked: 0
@@ -58,6 +56,9 @@ TagManager:
     locked: 0
   - name: Traps
     uniqueID: 4269884199
+    locked: 0
+  - name: Text
+    uniqueID: 502311517
     locked: 0
   - name: Player
     uniqueID: 2929734089
@@ -73,4 +74,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Projectilles
+    uniqueID: 1174911515
     locked: 0

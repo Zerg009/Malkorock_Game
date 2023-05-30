@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int startingHealth;
- 
+    [SerializeField] private float startingHealth;
+    [SerializeField] private Transform spawnPoint;
     public float health { get; private set; }
     private bool dead;
     private Animator anim;
@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            Debug.Log(dead);
+            //Debug.Log(dead);
             if(!dead)
             {
                 anim.SetTrigger("Die");
@@ -39,6 +39,7 @@ public class Health : MonoBehaviour
                     behaviour.enabled = false;
                 }
                 dead = true;
+
             }
         }
     }
@@ -47,5 +48,17 @@ public class Health : MonoBehaviour
         Debug.Log(health + " +  " + _health  + " = ");
         health = Mathf.Clamp(health + _health, 0, startingHealth);
         Debug.Log(health);
+    }
+    public void Resurrect()
+    {
+        foreach (Behaviour behaviour in components)
+        {
+            behaviour.enabled = true;
+        }
+        Debug.Log("ressurect");
+        transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, transform.position.z);
+        dead = false;
+        health = startingHealth;
+        anim.SetTrigger("Resurrect");
     }
 }
