@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     
     private Rigidbody2D body;
     private Animator anim;
-    private bool isGrounded;
     public bool isBlocked;
 
     [Header("Attack Parameters")]
@@ -60,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius , groundLayer );
 
-        Debug.Log(isTouchingGround);
+        //Debug.Log(isTouchingGround);
         // check for jump
         if (Input.GetKey(KeyCode.W) && isTouchingGround)
         {
@@ -75,21 +74,19 @@ public class PlayerMovement : MonoBehaviour
 
         Run();
 
-       
         anim.SetBool("isGrounded", isTouchingGround);
     }
     private void Attack()
     {
         cooldownTimer += Time.deltaTime;
-        //if (EnemyInSight())
-        //{
-            //if (cooldownTimer > attackCooldown)
-            //{
-            //    cooldownTimer = 0;
-                anim.SetTrigger("Attack");
-            //}
-        //}
-        
+           
+        if(!isTouchingGround)
+        {
+            anim.SetTrigger("JumpAttack");
+        }
+        else
+         anim.SetTrigger("Attack");
+  
     }
 
     private bool EnemyInSight()
@@ -125,9 +122,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (EnemyInSight())
         {
-            //Debug.Log(playerHealth);
+            //Debug.Log(enemyHealth);
             enemyHealth.TakeDamage(damage);
-            Debug.Log("Enemy health " + enemyHealth.health);
+            //Debug.Log("Enemy health " + enemyHealth.health);
         }
     }
     private void Run()
@@ -150,15 +147,11 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpHeight);
-        isGrounded = false;
+    
         anim.SetTrigger("Jump");
     }
    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-            isGrounded = true;
-    }
+
 
 
 

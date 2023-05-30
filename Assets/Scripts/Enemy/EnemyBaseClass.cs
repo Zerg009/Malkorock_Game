@@ -20,13 +20,13 @@ public class EnemyBaseClass : MonoBehaviour
     // References
     private Animator anim;
     private Health playerHealth;
-    private EnemyPatrol enemyPatrol;
+    private EnemyPatrolFly enemyPatrol;
 
 
     private void Awake()
     {
         anim = GetComponent<Animator>();        
-        enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        enemyPatrol = GetComponentInParent<EnemyPatrolFly>();
     }
 
 

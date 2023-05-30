@@ -22,7 +22,7 @@ TagManager:
   - Text
   - Enemies
   - Traps
-  - 
+  - Objects
   - 
   - 
   - 
@@ -70,4 +70,7 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 3277329669
+    locked: 0
+  - name: Actionable
+    uniqueID: 2213468771
     locked: 0
