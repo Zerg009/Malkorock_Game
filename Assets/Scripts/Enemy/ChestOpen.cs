@@ -8,6 +8,7 @@ public class ChestOpen : MonoBehaviour
     [SerializeField] private EnemyPatrolFly[] enemies;
     [SerializeField] private PlayerMovement player;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private GameObject showDialog;
     private Animator anim;
     private bool canOpen = true;
     private void Awake()
@@ -18,7 +19,7 @@ public class ChestOpen : MonoBehaviour
     {
         canOpen = true;
         float distance = Vector3.Distance(player.transform.position, this.transform.position);
-        if (Input.GetKeyDown(KeyCode.E) && distance < 10 )
+        if (Input.GetKeyDown(KeyCode.E) && distance < 2 )
         {
             foreach(EnemyPatrolFly enemy in enemies)
             {
@@ -35,6 +36,8 @@ public class ChestOpen : MonoBehaviour
                 // do something
                 Debug.Log("Opened chest");
                 anim.SetTrigger("Open");
+
+                showDialog.SetActive(true);
                 
             }
         }

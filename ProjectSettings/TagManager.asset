@@ -44,9 +44,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 3387772415
     locked: 0
@@ -59,11 +56,11 @@ TagManager:
   - name: Objects
     uniqueID: 4235809787
     locked: 0
-  - name: Player
-    uniqueID: 2929734089
-    locked: 0
   - name: Traps
     uniqueID: 4269884199
+    locked: 0
+  - name: Player
+    uniqueID: 2929734089
     locked: 0
   - name: Foreground
     uniqueID: 3022733159
@@ -73,4 +70,7 @@ TagManager:
     locked: 0
   - name: Actionable
     uniqueID: 2213468771
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

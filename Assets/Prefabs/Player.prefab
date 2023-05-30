@@ -312,7 +312,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 1142175538}
-  groundCheckRadius: 0.2
+  groundCheckRadius: 0.32
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
