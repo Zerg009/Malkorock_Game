@@ -193,9 +193,7 @@ GameObject:
   - component: {fileID: 305597350387305148}
   - component: {fileID: 9187552244915108008}
   - component: {fileID: 9187552244915108009}
-  - component: {fileID: 3504220513446153725}
   - component: {fileID: 9187552244915108007}
-  - component: {fileID: 3793403852139245556}
   - component: {fileID: 9187552244915108006}
   - component: {fileID: 1577335485373654956}
   - component: {fileID: 9187552244915108005}
@@ -290,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePos: {fileID: 311958914}
   fireball: {fileID: 1871661233907802195, guid: 24181f13354465b4e98db1e5f9f3e8a4, type: 3}
-  cooldown: 0
+  cooldown: 1.16
   canShoot: 0
 --- !u!61 &9187552244915108008
 BoxCollider2D:
@@ -339,19 +337,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &3504220513446153725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9187552244915108012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05819de280e8a584c9c301b8106d62c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showMenu: {fileID: 0}
 --- !u!114 &9187552244915108007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,19 +365,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &3793403852139245556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9187552244915108012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05819de280e8a584c9c301b8106d62c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showMenu: {fileID: 0}
 --- !u!95 &9187552244915108006
 Animator:
   serializedVersion: 5

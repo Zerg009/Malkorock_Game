@@ -13,14 +13,12 @@ public class DiaryWindow : MonoBehaviour
         confirmationWindow.SetActive(false);
 
     }
-    private void Update()
+
+    public void DestroyDiary()
     {
-        if(Input.GetKey(KeyCode.Escape) && confirmationWindow.gameObject.activeSelf)
-        {
-            Destroy(gameObject);
-            playerMovement.isBlocked = false;
-            confirmationWindow.SetActive(false);
-        }
+        Destroy(gameObject);
+        playerMovement.isBlocked = false;
+        confirmationWindow.SetActive(false);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,7 +27,7 @@ public class DiaryWindow : MonoBehaviour
         {
             confirmationWindow.SetActive(true);
             playerMovement.isBlocked = true;
-
+            GameObject.Find("DialogManager").GetComponent<DialogManager>().isShowingDiaryWindow = true;
         }
     }
 }

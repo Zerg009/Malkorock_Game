@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 104505626}
   - component: {fileID: 104505623}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,7 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45664e4be99dd9440bfbbf51e6f823ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
 --- !u!1 &234653759
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +692,7 @@ GameObject:
   - component: {fileID: 717004304}
   - component: {fileID: 717004301}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: OptionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -775,10 +774,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1731723235}
-        m_TargetAssemblyTypeName: OpenOptions, Assembly-CSharp
-        m_MethodName: LoadOptions
-        m_Mode: 1
+      - m_Target: {fileID: 1638954297}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -786,6 +785,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 866442990}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &717004302
 MonoBehaviour:
@@ -951,7 +962,7 @@ GameObject:
   - component: {fileID: 1182608449}
   - component: {fileID: 1182608445}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,8 +1045,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1182608449}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: Start_Game
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1110,7 +1121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45664e4be99dd9440bfbbf51e6f823ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
 --- !u!1 &1191365250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,8 +1311,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d457c632b750eb54ca028c580f1a27c4, type: 2}
+  m_sharedMaterial: {fileID: -4107941356126780251, guid: d457c632b750eb54ca028c580f1a27c4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1505,7 +1515,6 @@ GameObject:
   - component: {fileID: 1638954298}
   - component: {fileID: 1638954300}
   - component: {fileID: 1638954299}
-  - component: {fileID: 1638954301}
   m_Layer: 5
   m_Name: MainMenuContainer
   m_TagString: Untagged
@@ -1574,18 +1583,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638954297}
   m_CullTransparentMesh: 1
---- !u!114 &1638954301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638954297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f47ac3f48a3e704da204435c52b8a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1731723230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,8 +1594,8 @@ GameObject:
   - component: {fileID: 1731723234}
   - component: {fileID: 1731723233}
   - component: {fileID: 1731723232}
-  - component: {fileID: 1731723235}
   - component: {fileID: 1731723231}
+  - component: {fileID: 1731723235}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1701,11 +1698,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1731723230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcae344dc54d2ab49828fc77bc575c42, type: 3}
+  m_Script: {fileID: 11500000, guid: 568b4fee55ee9d243b37ffb42501af47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeMenu: {fileID: 866442994}
-  mainMenu: {fileID: 1638954301}
+  mainMenuContainer: {fileID: 1638954297}
+  optionsMenu: {fileID: 866442990}
 --- !u!1 &1949847226
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OptionsMenu : MonoBehaviour
+public class MenuButtons: MonoBehaviour
 {
-    [SerializeField] OpenOptions mainMenu;
-    public void Start_Game()
+    public void StartGame()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
     public void CloseGame()
     {
@@ -20,6 +19,11 @@ public class OptionsMenu : MonoBehaviour
     }
     public void Resume()
     {
-        mainMenu.gameObject.SetActive(false);
+        // hide the MainMenuDialog canvas
+        this.gameObject.SetActive(false);
+
+        // allow player to move
+        GameObject.Find("Player").GetComponent<PlayerMovement>().isBlocked = false;
     }
+   
 }
